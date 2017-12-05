@@ -10,6 +10,7 @@ services:
       - 'DATABASE_NAME=postgres'
       - 'DATABASE_USER=postgres'
       - 'DATABASE_PASSWORD=postgres'
+    command: python3 manage.py migrate
     command: python3 manage.py migrate auth
     command: python3 manage.py migrate
     command: python3 manage.py runserver 0.0.0.0:8000
