@@ -78,31 +78,31 @@ WSGI_APPLICATION = 'django_demo.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-# }
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'django-demo',
-        'USER': 'postgres',
-        'PASSWORD': 'root123',
-        'HOST': 'localhost',
-        'PORT': 5432,
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
-# if 'DATABASE_HOST' in os.environ:
-#     DATABASES['default']['HOST'] = os.getenv('DATABASE_HOST')
-#     DATABASES['default']['ENGINE'] = 'django.db.backends.postgresql_psycopg2'
-#     DATABASES['default']['NAME'] = os.getenv('DATABASE_NAME')
-#     DATABASES['default']['USER'] = os.getenv('DATABASE_USER')
-#     DATABASES['default']['PASSWORD'] = os.getenv('DATABASE_PASSWORD')
-#     DATABASES['default']['PORT'] = 5432
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'django-demo',
+#         'USER': 'postgres',
+#         'PASSWORD': 'root123',
+#         'HOST': 'localhost',
+#         'PORT': 5432,
+#     }
+# }
+
+if 'DATABASE_HOST' in os.environ:
+    DATABASES['default']['HOST'] = os.getenv('DATABASE_HOST')
+    DATABASES['default']['ENGINE'] = 'django.db.backends.postgresql_psycopg2'
+    DATABASES['default']['NAME'] = os.getenv('DATABASE_NAME')
+    DATABASES['default']['USER'] = os.getenv('DATABASE_USER')
+    DATABASES['default']['PASSWORD'] = os.getenv('DATABASE_PASSWORD')
+    DATABASES['default']['PORT'] = 5432
 
 
 # Password validation
@@ -148,4 +148,3 @@ CORS_ORIGIN_ALLOW_ALL = True
 CORS_ORIGIN_WHITELIST = [
     'localhost:4200',
 ]
-

@@ -24,3 +24,4 @@ urlpatterns = [
     url(r'^api/', include('rest_api.urls')),
 ]
 
+admin.site.site_header = 'Cocktail Admin'

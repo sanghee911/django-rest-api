@@ -1,6 +1,11 @@
-FROM python:3
+FROM python:3.5
 ENV PYTHONUNBUFFERED 1
-RUN mkdir -p /code/django-rest-api
-WORKDIR /code/django-rest-api
-ADD . /code/django-rest-api
+ENV DATABASE_HOST db
+ENV DATABASE_NAME postgres
+ENV DATABASE_USER postgres
+ENV DATABASE_PASSWORD postgres
+RUN mkdir /code
+WORKDIR /code
+ADD . /code
 RUN pip install -r requirements.txt
+ENTRYPOINT bash /code/init.sh
