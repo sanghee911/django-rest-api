@@ -8,4 +8,4 @@ RUN mkdir /code
 WORKDIR /code
 ADD . /code
 RUN pip install -r requirements.txt
-ENTRYPOINT bash /code/init.sh
+ENTRYPOINT ["bash", "/code/init.sh"]
